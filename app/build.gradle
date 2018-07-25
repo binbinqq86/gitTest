@@ -20,6 +20,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug{
+            if(IN_JENKINS.toBoolean()){
+                println "this is a jenkins packaging..."
+            }else{
+                println 'this is a normal packaging...'
+            }
+        }
     }
 }
 
